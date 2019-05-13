@@ -2140,8 +2140,7 @@ impl<'a> Parser<'a> {
         let ident = self.parse_path_segment_ident()?;
 
         let is_args_start = |token: &token::Token| match *token {
-            token::Lt | token::BinOp(token::Shl) | token::OpenDelim(token::Paren)
-            | token::LArrow => true,
+            token::Lt | token::BinOp(token::Shl) | token::OpenDelim(token::Paren) => true,
             _ => false,
         };
         let check_args_start = |this: &mut Self| {

@@ -180,7 +180,6 @@ pub enum Token {
     Colon,
     ModSep,
     RArrow,
-    LArrow,
     FatArrow,
     Pound,
     Dollar,
@@ -455,7 +454,6 @@ impl Token {
                 Eq => Le,
                 Lt => BinOp(Shl),
                 Le => BinOpEq(Shl),
-                BinOp(Minus) => LArrow,
                 _ => return None,
             },
             Gt => match joint {
@@ -501,7 +499,7 @@ impl Token {
             },
 
             Le | EqEq | Ne | Ge | AndAnd | OrOr | Tilde | BinOpEq(..) | At | DotDotDot |
-            DotDotEq | Comma | Semi | ModSep | RArrow | LArrow | FatArrow | Pound | Dollar |
+            DotDotEq | Comma | Semi | ModSep | RArrow | FatArrow | Pound | Dollar |
             Question | OpenDelim(..) | CloseDelim(..) |
             Literal(..) | Ident(..) | Lifetime(..) | Interpolated(..) | DocComment(..) |
             Whitespace | Comment | Shebang(..) | Eof => return None,
@@ -546,7 +544,6 @@ impl Token {
             (&Colon, &Colon) |
             (&ModSep, &ModSep) |
             (&RArrow, &RArrow) |
-            (&LArrow, &LArrow) |
             (&FatArrow, &FatArrow) |
             (&Pound, &Pound) |
             (&Dollar, &Dollar) |

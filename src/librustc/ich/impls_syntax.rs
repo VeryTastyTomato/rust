@@ -329,7 +329,6 @@ fn hash_token<'a, 'gcx, W: StableHasherResult>(
         token::Token::Colon |
         token::Token::ModSep |
         token::Token::RArrow |
-        token::Token::LArrow |
         token::Token::FatArrow |
         token::Token::Pound |
         token::Token::Dollar |

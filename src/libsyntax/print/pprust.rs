@@ -215,7 +215,6 @@ pub fn token_to_string(tok: &Token) -> String {
         token::Colon                => ":".to_string(),
         token::ModSep               => "::".to_string(),
         token::RArrow               => "->".to_string(),
-        token::LArrow               => "<-".to_string(),
         token::FatArrow             => "=>".to_string(),
         token::OpenDelim(token::Paren) => "(".to_string(),
         token::CloseDelim(token::Paren) => ")".to_string(),

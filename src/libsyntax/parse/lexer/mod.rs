@@ -1032,10 +1032,6 @@ impl<'a> StringReader<'a> {
                     '<' => {
                         Ok(self.binop(token::Shl))
                     }
-                    '-' => {
-                        self.bump();
-                        Ok(token::LArrow)
-                    }
                     _ => {
                         Ok(token::Lt)
                     }
