@@ -249,7 +249,7 @@ impl<'a> Classifier<'a> {
 
             // Miscellaneous, no highlighting.
             token::Dot | token::DotDot | token::DotDotDot | token::DotDotEq | token::Comma |
-                token::Semi | token::Colon | token::ModSep | token::LArrow | token::OpenDelim(_) |
+                token::Semi | token::Colon | token::ModSep | token::OpenDelim(_) |
                 token::CloseDelim(token::Brace) | token::CloseDelim(token::Paren) |
                 token::CloseDelim(token::NoDelim) => Class::None,
 

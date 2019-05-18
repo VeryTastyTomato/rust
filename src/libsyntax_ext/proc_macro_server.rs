@@ -135,7 +135,6 @@ impl FromInternal<(TreeAndJoint, &'_ ParseSess, &'_ mut Vec<Self>)>
             Colon => op!(':'),
             ModSep => op!(':', ':'),
             RArrow => op!('-', '>'),
-            LArrow => op!('<', '-'),
             FatArrow => op!('=', '>'),
             Pound => op!('#'),
             Dollar => op!('$'),

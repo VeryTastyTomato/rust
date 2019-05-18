@@ -215,7 +215,6 @@ pub fn token_to_string(tok: &Token) -> String {
         token::Colon                => ":".to_string(),
         token::ModSep               => "::".to_string(),
         token::RArrow               => "->".to_string(),
-        token::LArrow               => "<-".to_string(),
         token::FatArrow             => "=>".to_string(),
         token::OpenDelim(token::Paren) => "(".to_string(),
         token::CloseDelim(token::Paren) => ")".to_string(),
@@ -2003,13 +2002,6 @@ impl<'a> State<'a> {
             ast::ExprKind::Box(ref expr) => {
                 self.word_space("box")?;
                 self.print_expr_maybe_paren(expr, parser::PREC_PREFIX)?;
-            }
-            ast::ExprKind::ObsoleteInPlace(ref place, ref expr) => {
-                let prec = AssocOp::ObsoleteInPlace.precedence() as i8;
-                self.print_expr_maybe_paren(place, prec + 1)?;
-                self.s.space()?;
-                self.word_space("<-")?;
-                self.print_expr_maybe_paren(expr, prec)?;
             }
             ast::ExprKind::Array(ref exprs) => {
                 self.print_expr_vec(&exprs[..], attrs)?;
